@@ -31,3 +31,12 @@
 .mat-column-severity {
   width: 23%;
 }
+
+.center-search-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.center-search-bar .mat-form-field {
+  width: 75%;
+}

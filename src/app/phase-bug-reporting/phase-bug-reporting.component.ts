@@ -8,7 +8,12 @@ import { UserService } from '../core/services/user.service';
   styleUrls: ['./phase-bug-reporting.component.css']
 })
 export class PhaseBugReportingComponent implements OnInit {
+  searchValue = '';
   constructor(public permissions: PermissionService, public userService: UserService) {}
 
   ngOnInit() {}
+
+  onSearchChange(searchValue: string) {
+    this.searchValue = searchValue;
+  }
 }

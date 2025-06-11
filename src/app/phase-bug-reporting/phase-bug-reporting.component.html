@@ -1,4 +1,11 @@
 <div>
-  <app-issues-posted></app-issues-posted>
-  <app-issues-deleted></app-issues-deleted>
+  <!-- Global Search -->
+  <div class="center-search-bar">
+    <mat-form-field>
+      <input matInput [(ngModel)]="searchValue" (keyup)="onSearchChange($event.target.value)" placeholder="Search Issues" />
+    </mat-form-field>
+  </div>
+
+  <app-issues-posted [searchValue]="searchValue"></app-issues-posted>
+  <app-issues-deleted [searchValue]="searchValue"></app-issues-deleted>
 </div>
