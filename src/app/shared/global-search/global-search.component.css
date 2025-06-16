@@ -1,0 +1,9 @@
+.global-search-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 16px;
+}
+mat-form-field {
+  width: 80%;
+}

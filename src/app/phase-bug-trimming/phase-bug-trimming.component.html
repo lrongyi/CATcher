@@ -1,4 +1,5 @@
 <div>
-  <app-issues-posted></app-issues-posted>
-  <app-issues-deleted></app-issues-deleted>
+  <app-global-search (search)="onGlobalSearch($event)"></app-global-search>
+  <app-issues-posted [filterValue]="globalSearchValue"></app-issues-posted>
+  <app-issues-deleted [filterValue]="globalSearchValue"></app-issues-deleted>
 </div>

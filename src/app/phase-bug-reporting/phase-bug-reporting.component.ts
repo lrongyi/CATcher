@@ -9,6 +9,11 @@ import { UserService } from '../core/services/user.service';
 })
 export class PhaseBugReportingComponent implements OnInit {
   constructor(public permissions: PermissionService, public userService: UserService) {}
+  globalSearchValue = '';
+
+  onGlobalSearch(value: string) {
+    this.globalSearchValue = value;
+  }
 
   ngOnInit() {}
 }
