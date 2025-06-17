@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { PermissionService } from '../../core/services/permission.service';
 import { UserService } from '../../core/services/user.service';
 import { TABLE_COLUMNS } from '../../shared/issue-tables/issue-tables-columns';
@@ -14,6 +14,7 @@ export class IssuesPostedComponent implements OnInit {
   readonly displayedColumns = [TABLE_COLUMNS.NO, TABLE_COLUMNS.TITLE, TABLE_COLUMNS.TYPE, TABLE_COLUMNS.SEVERITY, TABLE_COLUMNS.ACTIONS];
   readonly actionButtons: ACTION_BUTTONS[] = [ACTION_BUTTONS.VIEW_IN_WEB, ACTION_BUTTONS.DELETE_ISSUE, ACTION_BUTTONS.FIX_ISSUE];
   filter: (issue: Issue) => boolean;
+  @Input() filterValue: string;
 
   @ViewChild(IssueTablesComponent, { static: true }) table: IssueTablesComponent;
 
@@ -25,7 +26,13 @@ export class IssuesPostedComponent implements OnInit {
     };
   }
 
+  ngOnChanges() {
+    this.applyFilter(this.filterValue || '');
+  }
+
   applyFilter(filterValue: string) {
-    this.table.issues.filter = filterValue;
+    if (this.table && this.table.issues) {
+      this.table.issues.filter = filterValue;
+    }
   }
 }

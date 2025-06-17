@@ -7,9 +7,10 @@ import { ViewIssueModule } from '../shared/view-issue/view-issue.module';
 import { IssuesDeletedComponent } from './issues-deleted/issues-deleted.component';
 import { IssuesPostedComponent } from './issues-posted/issues-posted.component';
 import { IssueTablesModule } from '../shared/issue-tables/issue-tables.module';
+import { GlobalSearchModule } from '../shared/global-search/global-search.module';
 
 @NgModule({
-  imports: [PhaseBugTrimmingRoutingModule, SharedModule, ViewIssueModule, IssueTablesModule],
+  imports: [PhaseBugTrimmingRoutingModule, SharedModule, ViewIssueModule, IssueTablesModule, GlobalSearchModule],
   declarations: [PhaseBugTrimmingComponent, IssueComponent, IssuesDeletedComponent, IssuesPostedComponent]
 })
 export class PhaseBugTrimmingModule {}

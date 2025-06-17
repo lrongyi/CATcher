@@ -9,6 +9,11 @@ import { UserService } from '../core/services/user.service';
 })
 export class PhaseBugTrimmingComponent implements OnInit {
   constructor(public permissions: PermissionService, public userService: UserService) {}
+  globalSearchValue = '';
 
   ngOnInit(): void {}
+
+  onGlobalSearch(value: string) {
+    this.globalSearchValue = value;
+  }
 }
